@@ -2,15 +2,14 @@
 
 BelGlow by DigitAlholics
 
-El proyecto consiste en tres aplicaciones: una dirigida a los clientes, otra destinada a los empleados de Belcorp y una aplicación en Python que conecta ambas, utilizando los datos recolectados en la primera para generar insights en la segunda. Para el despliegue de este proyecto, se utilizó Firebase, siguiendo los pasos correspondientes.
+The project consists of three applications: one directed at customers, another aimed at Belcorp employees, and a Python application that connects both, utilizing the data collected from the first to generate insights in the second. For the deployment of this project, Firebase was used, following the appropriate steps.
 
-Para su despliegue se empleó firebase:
+The deployment process involved Firebase:
 
-1) Crear una Build en web con: flutter build web
-2) Instalar Firebase en epl proyecto: npm install -g firebase-tools
-3) Iniciar Firebase: firebase experiments:enable webframeworks
-4) iniciar hosting: firebase init hosting
-5) desplegar: firebase deploy
-
-Enlace de la app:https://belglow-d9f27.web.app/ 
-Dimensiones recomendadas: Celular en web
+Creating a web build using Flutter.
+Installing Firebase in the project.
+Enabling Firebase experiments related to web frameworks.
+Initializing the Firebase hosting.
+Deploying the application.
+App link: https://belglow-d9f27.web.app/ 
+Recommended dimensions: 
