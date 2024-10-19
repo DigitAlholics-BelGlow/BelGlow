@@ -2,15 +2,16 @@
 
 BelGlow by DigitAlholics
 
-## Getting Started
+# BelGlow_IA
+El proyecto consiste en tres aplicaciones: una dirigida a los clientes, otra destinada a los empleados de Belcorp y una aplicación en Python que conecta ambas, utilizando los datos recolectados en la primera para generar insights en la segunda. Para el despliegue de este proyecto, se utilizó Firebase, siguiendo los pasos correspondientes.
 
-This project is a starting point for a Flutter application.
+Para su despliegue se empleó firebase:
 
-A few resources to get you started if this is your first Flutter project:
+1) Crear una Build en web con: flutter build web
+2) Instalar Firebase en epl proyecto: npm install -g firebase-tools
+3) Iniciar Firebase: firebase experiments:enable webframeworks
+4) iniciar hosting: firebase init hosting
+5) desplegar: firebase deploy
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Enlace de la app:https://belglow-d9f27.web.app/ 
+Dimensiones recomendadas: Celular en web
