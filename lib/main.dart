@@ -1,4 +1,5 @@
 import 'package:belglow/choices.dart';
+import 'package:belglow/payment_successfully.dart';
 import 'package:belglow/recommedation.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: false,
       ),
-      home: const Recommedation(),
+      home: const PaymentSuccessfully(),
     );
   }
 }
