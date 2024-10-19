@@ -19,8 +19,8 @@ A continuación se incluye un manual de usuario que ofrece ejemplos de interacci
 Cada sección incluye un escenario de conversación típico, que muestra cómo consultar sobre productos, obtener asistencia y recibir recomendaciones.
 
 # 1. Consultando sobre Productos Disponibles
-User: What kind of products do you offer?
-Assistant: We offer a wide range of beauty products, personal care items, perfumes, and makeup from top brands like Cyzone, Esika, and L'Bel. Is there a particular category or brand you're interested in?
+-User: What kind of products do you offer?
+-Assistant: We offer a wide range of beauty products, personal care items, perfumes, and makeup from top brands like Cyzone, Esika, and L'Bel. Is there a particular category or brand you're interested in?
 
 # 2. Explorando la Selección de Perfumes
 User: I would like to explore your selection of perfumes. <\br>
@@ -107,8 +107,8 @@ Assistant: Our products have a shelf life of at least one year from the date of 
 (Action: provideExpiryInfo)
 
 # 19. Interés en Fragancias con Notas Específicas
-User: I am searching for a perfume with notes of vanilla.
-Assistant: Certainly! We have several perfumes with vanilla notes. Do you have a preferred brand like Cyzone, Esika, or L'Bel?
+-User: I am searching for a perfume with notes of vanilla.
+-Assistant: Certainly! We have several perfumes with vanilla notes. Do you have a preferred brand like Cyzone, Esika, or L'Bel?
 (Action: showPerfumes)
 
 # 20. Buscando Recomendaciones para Regalos
