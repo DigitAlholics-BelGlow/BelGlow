@@ -17,6 +17,9 @@ Recommended dimensions:
 # Manual de Uso
 A continuación se incluye un manual de usuario que ofrece ejemplos de interacciones entre el usuario y el asistente.
 Cada sección incluye un escenario de conversación típico, que muestra cómo consultar sobre productos, obtener asistencia y recibir recomendaciones.
+Al finalizar, se escribirá "confirm" para pasar al siguiente flujo.
+
+Asi mismo debe proporcionar su Localizacion, Nombre completo y su numero de celular, para realizar el envio de de sus datos a los consultores.
 
 # 1. Consultando sobre Productos Disponibles
 - User: What kind of products do you offer?
