@@ -19,8 +19,8 @@ A continuación se incluye un manual de usuario que ofrece ejemplos de interacci
 Cada sección incluye un escenario de conversación típico, que muestra cómo consultar sobre productos, obtener asistencia y recibir recomendaciones.
 
 # 1. Consultando sobre Productos Disponibles
--User: What kind of products do you offer?
--Assistant: We offer a wide range of beauty products, personal care items, perfumes, and makeup from top brands like Cyzone, Esika, and L'Bel. Is there a particular category or brand you're interested in?
+- User: What kind of products do you offer?
+- Assistant: We offer a wide range of beauty products, personal care items, perfumes, and makeup from top brands like Cyzone, Esika, and L'Bel. Is there a particular category or brand you're interested in?
 
 # 2. Explorando la Selección de Perfumes
 User: I would like to explore your selection of perfumes. <\br>
