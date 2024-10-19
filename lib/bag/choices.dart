@@ -9,9 +9,9 @@ class Choices extends StatefulWidget {
 }
 
 class _ChoicesState extends State<Choices> {
-  // Inicializar una lista para las cantidades de productos
-  List<int> quantities = [1, 1, 1, 1]; // Cantidades iniciales
-  List<bool> selectedProducts = [false, false, false, false]; // Estado de los checkboxes
+  List<int> quantities = [1, 1, 1, 1];
+  List<bool> selectedProducts = [false, false, false, false];
+  final TextEditingController _locationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -98,6 +98,7 @@ class _ChoicesState extends State<Choices> {
 
             // Campo de ubicación
             TextField(
+              controller: _locationController,
               decoration: InputDecoration(
                 labelText: 'Your location',
                 border: OutlineInputBorder(),
@@ -206,7 +207,11 @@ class _ChoicesState extends State<Choices> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Pay()), // Navegar a la vista ChoicesView
+                    MaterialPageRoute(
+                      builder: (context) => Pay(
+                        location: _locationController.text,
+                      ),
+                    ),
                   );
                 },
                 style: ElevatedButton.styleFrom(

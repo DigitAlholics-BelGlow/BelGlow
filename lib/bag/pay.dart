@@ -1,20 +1,60 @@
 import 'package:belglow/bag/payment_successfully.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Pay extends StatefulWidget {
-  const Pay({
-    super.key,
-  });
+  final String location;
+
+  const Pay({super.key, required this.location});
+
   @override
   State<Pay> createState() => _PayState();
 }
-final TextEditingController _textController = TextEditingController();
 
 class _PayState extends State<Pay> {
   final TextEditingController _fullNameController = TextEditingController();
-  final TextEditingController _countryCodeController = TextEditingController();
   final TextEditingController _phoneNumberController = TextEditingController();
+
+  final String botToken = '7534055417:AAFSetqguPZSkQCf8n2yGu0j5vcEKN77sYU'; // El token del bot de Telegram
+  final String chatId = '5857726013'; // El Chat ID del destinatario
+  final String message = '¡Hola desde mi app Flutter! Este es un mensaje automático.';
+
+  Future<void> sendMessage() async {
+    final String fullName = _fullNameController.text;
+    final String phoneNumber = _phoneNumberController.text;
+    final String country = widget.location;
+    // Message content with the client's details
+    final String message = '''
+    Hello Luis Pineda, a new client has reached out. Here are their details:
+
+    - Name: $fullName
+    - Phone: $phoneNumber
+    - Country: $country
+    - Product Selected: Red Power 4
+
+    Please follow up with the client to assist them further.
+    ''';
+
+    final String url = 'https://api.telegram.org/bot$botToken/sendMessage';
+
+    final response = await http.post(
+      Uri.parse(url),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'chat_id': chatId,
+        'text': message,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      print('Message sent successfully.');
+    } else {
+      print('Error sending message: ${response.body}');
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +182,6 @@ class _PayState extends State<Pay> {
                 Expanded(
                   flex: 2,
                   child: TextField(
-                    controller: _countryCodeController,
                     decoration: const InputDecoration(
                       hintText: 'Country Code',
                       border: OutlineInputBorder(),
@@ -239,19 +278,7 @@ class _PayState extends State<Pay> {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  String fullName = _fullNameController.text;
-                  String countryCode = _countryCodeController.text;
-                  String phoneNumber = _phoneNumberController.text;
-                  if (fullName.isNotEmpty && phoneNumber.isNotEmpty &&
-                      countryCode.isNotEmpty) {
-                    _openWhatsApp(phoneNumber, countryCode, fullName);
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Please fill in the required fields.'),
-                      ),
-                    );
-                  }
+                  sendMessage();
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) =>
@@ -280,24 +307,6 @@ class _PayState extends State<Pay> {
         ),
       ),
     );
-  }
-
-  void _openWhatsApp(String phoneNumber, String countryCode,
-      String fullName) async {
-    String message = "Hello $fullName, your order has been confirmed!";
-    String phone = "$countryCode$phoneNumber";
-    String url = "https://wa.me/$phone?text=${Uri.encodeComponent(message)}";
-
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text(
-              'Could not open WhatsApp. Please make sure it is installed.'),
-        ),
-      );
-    }
   }
 }
 
